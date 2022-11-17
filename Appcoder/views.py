@@ -1,10 +1,23 @@
+from django.http import HttpResponse 
 from django.shortcuts import render
+from Appcoder.models import Excursion
 
 # Create your views here.
-from Appcoder.models import viajes
+def inicio(request):
+    return render(request, "Appcoder/inicio.html")
 
-def mostrar_familiares(request):
-    f1 = viajes(nombre="Carlos Roman", edad=44, nacimiento="1978-11-13")
-    f2 = viajes(nombre="Martin Roman", edad=23, nacimiento="1999-01-07")
-    f3 = viajes(nombre="Maria Roman", edad=22, nacimiento="2000-08-25")
-    return render(request, "familia.html", {"familia":[f1, f2, f3]})
+def excursiones(request):
+    return HttpResponse("Estas en excursiones")
+
+def participantes(request):
+    return HttpResponse("Estas en participantes")
+
+def recreadores(request):
+    return HttpResponse("Estas en recreadores")
+
+def documentacion(request):
+    return HttpResponse("Estas en documentacion")
+
+# Res   .
+
+

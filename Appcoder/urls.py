@@ -1,7 +1,11 @@
 from django.urls import path
-from Appcoder.views import mostrar_familiares
+from Appcoder.views import *
 
 urlpatterns = [
-    path("viajes/", mostrar_familiares)
+    path("", inicio),
+    path("participantes/", participantes),
+    path("recreadores/", recreadores),
+    path("excursiones/", excursiones),
+    path("documentacion/", documentacion)
     
 ]

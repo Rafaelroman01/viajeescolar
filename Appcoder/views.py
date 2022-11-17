@@ -2,9 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from Appcoder.models import Excursion
 
+
+
 # Create your views here.
 def inicio(request):
-    return render(request, "Appcoder/inicio.html")
+    return render(request, "Appcoder/index.html")
+
 
 def excursiones(request):
     return HttpResponse("Estas en excursiones")

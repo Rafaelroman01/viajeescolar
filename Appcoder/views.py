@@ -10,16 +10,16 @@ def inicio(request):
 
 
 def excursiones(request):
-    return HttpResponse("Estas en excursiones")
+    return render(request, "Appcoder/excursiones.html")
 
 def participantes(request):
-    return HttpResponse("Estas en participantes")
+    return render(request, "Appcoder/participantes.html") 
 
 def recreadores(request):
-    return HttpResponse("Estas en recreadores")
+    return render(request, "Appcoder/recreadores.html")
 
 def documentacion(request):
-    return HttpResponse("Estas en documentacion")
+    return render(request, "Appcoder/documentacion.html")
 
 # Res   .
 

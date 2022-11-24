@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from Appcoder.models import *
+
+admin.site.register(Excursiones)
+admin.site.register(Participantes)
+admin.site.register(Recreadores)
+admin.site.register(Documentacion)

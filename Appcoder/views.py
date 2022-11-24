@@ -1,6 +1,6 @@
 from django.http import HttpResponse 
 from django.shortcuts import render
-from Appcoder.models import Excursion
+from Appcoder.models import *
 
 
 

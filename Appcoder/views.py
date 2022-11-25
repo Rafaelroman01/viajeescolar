@@ -1,6 +1,7 @@
 from django.http import HttpResponse 
 from django.shortcuts import render
-from Appcoder.models import Excursiones
+from Appcoder.models import Excursiones, Recreadores
+from Appcoder.forms import RecreadorFormulario
 from Appcoder.models import *
 
 
@@ -28,6 +29,24 @@ def participantes(request):
 
 def recreadores(request):
     return render(request, "Appcoder/recreadores.html")
+
+def creacion_recreadores(request):
+    if request.method == "POST":
+        formulario = RecreadorFormulario(request.POST)
+        
+        # Validamos que el formulario no tenga problemas
+        if formulario.is_valid():
+            # Recuperamos los datos del atributo cleaned_data
+            data = formulario.cleaned_data
+            recreadores = Recreadores(nombre=data["nombre"], edad=data["edad"], nacimiento=data["nacimiento"])
+            
+            recreadores.save()
+            
+    
+    formulario = RecreadorFormulario()
+    contexto = {"formulario": formulario}
+    return render(request, "Appcoder/recreadores_formularios.html", contexto)
+
 
 def documentacion(request):
     return render(request, "Appcoder/documentacion.html")

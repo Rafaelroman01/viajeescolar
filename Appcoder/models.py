@@ -16,6 +16,8 @@ class Recreadores(models.Model):
     edad = models.IntegerField()
     nacimiento = models.DateField()
     
+    
+    
 class Documentacion(models.Model):
     nombre = models.CharField(max_length=50)
     fecha_de_entrega = models.DateField()

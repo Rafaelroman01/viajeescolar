@@ -1,0 +1,22 @@
+{% extends 'Appcoder/base.html' %} 
+
+
+{% block contenido %}
+
+<form action="/coder/excursiones/crear/" method="post">
+    {% csrf_token %}
+    
+    <p>
+        Excursion <input type="text" name="lugar">
+    </p>
+
+    <p>
+        Email <input type="email" name="email"> 
+    </p>
+
+    <input type="submit" value="Crear excursion">
+<</form>
+
+{% endblock %}
+
+

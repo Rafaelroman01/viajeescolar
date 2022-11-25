@@ -47,6 +47,14 @@ def creacion_recreadores(request):
     contexto = {"formulario": formulario}
     return render(request, "Appcoder/recreadores_formularios.html", contexto)
 
+def buscar_excursion(request):
+    return render(request, "Appcoder/busqueda_excursion.html")
+
+def resultados_busqueda_excursion(request):
+    destino_excursion = request.GET["destino_excursion"]
+    excursiones = Excursiones.object.filter(lugar_icontains=destino_excursion)
+    return render(request, "Appcoder/resultados_busqueda_excursion.html", {"excursiones": excursiones})
+    
 
 def documentacion(request):
     return render(request, "Appcoder/documentacion.html")

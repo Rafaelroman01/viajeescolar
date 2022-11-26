@@ -1,6 +1,6 @@
 from django.http import HttpResponse 
 from django.shortcuts import render
-from Appcoder.models import Excursiones, Recreadores
+from Appcoder.models import Excursion, Recreadores
 from Appcoder.forms import RecreadorFormulario
 from Appcoder.models import *
 
@@ -51,8 +51,8 @@ def buscar_excursion(request):
     return render(request, "Appcoder/busqueda_excursion.html")
 
 def resultados_busqueda_excursion(request):
-    destino_excursion = request.GET["destino_excursion"]
-    excursiones = Excursiones.object.filter(lugar_icontains=destino_excursion)
+    lugar= request.GET[lugar]
+    excursiones = Excursion.objects.filter(lugar__icontains=lugar)
     return render(request, "Appcoder/resultados_busqueda_excursion.html", {"excursiones": excursiones})
     
 

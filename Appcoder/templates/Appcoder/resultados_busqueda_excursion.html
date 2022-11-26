@@ -1,13 +1,10 @@
 {% extends 'Appcoder/base.html' %} 
 
 {% block contenido %}
-
 <ul>
-    {% for excursion in excursiones %}
-        <li>{{excursion.lugar}} - {{excursion.email}}</li>
-    {% endblock %}
-
-
+    {% for excursiones en excursiones%}
+        <li>{{excursiones.lugar}}-{{excursion.email}}</li>
+    {%endfort%}
 </ul>
 
 {% endblock %}

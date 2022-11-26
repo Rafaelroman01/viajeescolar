@@ -19,7 +19,7 @@ def creacion_excursion(request):
         destino_excursion = request.POST["lugar"]
         datos_email = request.POST["email"] 
         
-        excursion = Excursiones(lugar=destino_excursion, email=datos_email)
+        excursion = Excursion(lugar=destino_excursion, email=datos_email)
         excursion.save()
     
     return render(request, "Appcoder/excursion_formulario.html")

@@ -51,7 +51,7 @@ def buscar_excursion(request):
     return render(request, "Appcoder/busqueda_excursion.html")
 
 def resultados_busqueda_excursion(request):
-    nombre= request.GET[nombre]
+    destino_excursion= request.GET[destino_excursion]
     excursiones = Excursion.objects.filter(nombre__icontains=nombre)
     return render(request, "Appcoder/resultados_busqueda_excursion.html", {"excursiones": excursiones})
     

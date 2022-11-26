@@ -16,7 +16,7 @@ def excursiones(request):
 def creacion_excursion(request):
     
     if request.method == "POST":
-        destino_excursion = request.POST["lugar"]
+        destino_excursion = request.POST["nombre"]
         datos_email = request.POST["email"] 
         
         excursion = Excursion(nombre=destino_excursion, email=datos_email)

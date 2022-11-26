@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Excursion(models.Model):
-    lugar = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50)
     email = models.EmailField()
     
     

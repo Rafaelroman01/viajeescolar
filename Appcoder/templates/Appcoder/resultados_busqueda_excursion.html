@@ -2,8 +2,8 @@
 
 {% block contenido %}
 <ul>
-    {% for excursiones en excursiones%}
-        <li>{{excursiones.lugar}}-{{excursion.email}}</li>
+    {% for excursion en excursiones%}
+        <li>{{excursiones.nombre}}-{{excursiones.email}}</li>
     {%endfort%}
 </ul>
 

@@ -5,3 +5,4 @@ from appcododer.views import Excursion
 
 def vista_saludo(request):
     return HttpResponse()
+

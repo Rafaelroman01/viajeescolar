@@ -16,10 +16,10 @@ def excursiones(request):
 def creacion_excursion(request):
     
     if request.method == "POST":
-        destino_excursion = request.POST["nombre"]
+        nombre_excursion = request.POST["nombre"]
         datos_email = request.POST["email"] 
         
-        excursion = Excursion(nombre=destino_excursion, email=datos_email)
+        excursion = Excursion(nombre=nombre_excursion, email=datos_email)
         excursion.save()
     
     return render(request, "Appcoder/excursion_formulario.html")
@@ -51,8 +51,8 @@ def buscar_excursion(request):
     return render(request, "Appcoder/busqueda_excursion.html")
 
 def resultados_busqueda_excursion(request):
-    destino_excursion= request.GET[destino_excursion]
-    excursiones = Excursion.objects.filter(nombre__icontains=destino_excursion)
+    nombre_excursion= request.GET["nombre_excursion"]
+    excursiones = Excursion.objects.filter(nombre__icontains=nombre_excursion)
     return render(request, "Appcoder/resultados_busqueda_excursion.html", {"excursiones": excursiones})
     
 
